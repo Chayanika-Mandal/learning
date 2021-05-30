@@ -6,6 +6,6 @@ while num != n:
         num = int(input("too large.\n"))
     elif num < n:
         num = int(input("too small.\n"))
-    if num == n:
-        print("success")
+else:
+    print("success")
 
