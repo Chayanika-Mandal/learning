@@ -23,3 +23,28 @@
 # Example:
 #   - input: 2, 3
 #   - output: 15
+
+# %% [markdown]
+# # Question 4:
+# WAP that inputs a line of text and prints each word in a separate line. Also,
+# print the total number of words in that input.
+#
+# Example
+#
+# **Input:** Python is fun.
+#
+# **Output**:
+# ```text
+#  Python
+#  is
+#  fun.
+#  Total words: 3
+# ```
+
+# %% [markdown]
+# # Question 5:
+# WAP to calculate the sum of digits present in an input string.
+#
+# **Input**: hello123
+#
+# **Output**: 6
