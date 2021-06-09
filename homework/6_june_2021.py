@@ -5,10 +5,18 @@
 # Example:
 #   - input: 7
 #   - output: 0 1 1 2 3 5 8
-mynumber = int(input("Enter number"))
-element = 1
-for _ in range(0, mynumber):
-    element += element 
+
+# %%
+# n = int(input("Enter number"))
+n = 7
+a, b = 0, 1
+for _ in range(2, n):
+    print(a)
+    print(b)
+    temp = b
+    a = b
+    b = a + temp
+
 # %% [markdown]
 # # Question 2:
 # WAP to print the factorial of n.
@@ -21,6 +29,7 @@ factorial = 1
 for element in range(1, numeral + 1):
     factorial *= element
 print(factorial)
+
 # %% [markdown]
 # # Question 3:
 # WAP to input the value of `x` and `n` and print the sum
@@ -30,20 +39,15 @@ print(factorial)
 # Example:
 #   - input: 2, 3
 #   - output: 15
-x = int(input("Enter x."))
-n = int(input("enter n."))
-sum = 1
-product = 1
-num = 0
-number = 0
-for num in range(0, x + 1):
-    for number in range(0, num):
-        product *= n
-        number += 1
-    num += 1
-    sum += product
-    
+
+# %%
+x = int(input("Enter x: "))
+n = int(input("enter n: "))
+sum = 0
+for num in range(0, n + 1):
+    sum += x ** num
 print(sum)
+
 # %% [markdown]
 # # Question 4:
 # WAP that inputs a line of text and prints each word in a separate line. Also,
@@ -60,11 +64,12 @@ print(sum)
 #  fun.
 #  Total words: 3
 # ```
-mystring = input("enter string")
-mylist = mystring.split()
-for charactor in mylist:
-    print(charactor)
-print(f"Total words are {len(mylist)}")
+my_string = input("enter string")
+my_list = my_string.split()
+for character in my_list:
+    print(character)
+print(f"Total words are {len(my_list)}")
+
 # %% [markdown]
 # # Question 5:
 # WAP to calculate the sum of digits present in an input string.
@@ -73,10 +78,9 @@ print(f"Total words are {len(mylist)}")
 #
 # **Output**: 6
 
-mynum = input("Enter your string.")
+my_num = input("Enter your string.")
 n = 0
-for charector in mynum:
-    if charector.isdigit():
-        n += int(charector)
-print(f"the sum of all the digits in {mynum} is {n}.")
-# %%
+for character in my_num:
+    if character.isdigit():
+        n += int(character)
+print(f"the sum of all the digits in {my_num} is {n}.")
