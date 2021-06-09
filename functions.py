@@ -14,6 +14,11 @@
 # ```python
 #  <FUNCTION_NAME>([arguments[, optional-arguments]])
 
+# The Importance of Python Functions
+# 1. Abstraction and Reusability
+# 2. Modularity
+# 3. Namespace Separation
+
 # %%
 # The simplest possible function
 def say_hello():
@@ -33,6 +38,7 @@ def say_hi(first_name, last_name):  # name = "Diptesh"
 say_hi("Diptesh", "Choudhuri")
 
 
+# Abstraction and re-usability
 # %%
 def say_hi(first_name, last_name, age=12):
     """
@@ -63,3 +69,16 @@ def get_full_name(first_name, last_name):
 
 o = get_full_name("Diptesh", "Choudhuri")
 print(o)
+
+
+# %%
+def f():
+    s = "-- Inside f()"
+    print(s)
+
+
+print("Before calling f()")
+f()
+print("After calling f()")
+
+# %%
