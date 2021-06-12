@@ -29,7 +29,6 @@ def function_1():
     pass
 
 
-@pytest.mark.xfail
 def test_function_1():
     assert function_1(3, 10, 5) is True
     assert function_1(1, 10, -1) is False
