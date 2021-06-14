@@ -81,4 +81,60 @@ print("Before calling f()")
 f()
 print("After calling f()")
 
+
 # %%
+def say_age(age):
+    print("we have entered the function")
+    if type(age) is not int:
+        raise ValueError(f"`age` expected type {int}, got {type(age)}")
+    if age == 15:
+        return "You are 15 years old"
+    elif age > 15:
+        return "You are more than 15 years old"
+    else:
+        return "You are less than 15 years old"
+
+
+variable = say_age(23)
+print(variable)
+
+
+# %%
+def return_some_str():
+
+    return "hello "
+
+
+p = return_some_str().title()
+print(p)
+
+
+# %%
+def double(x):
+    print(x * 2)
+    # return x * 2
+
+
+x = 5
+x = double(x)
+print(x)
+
+
+# %%
+def average(*args):
+    for element in args:
+        if type(element) == str:
+            raise TypeError(f"Expected type {int}, got {type(element)}")
+    return sum(args) / len(args)
+
+
+print(average(1, 2, 3, 5))
+print(average(1, 2, 3, "hello"))
+
+
+# %%
+def func(a, b, c, *args):
+    print(a, b, c, args)
+
+
+func(1, 2, 4, 5, 6, 7, 8)
