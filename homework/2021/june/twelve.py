@@ -25,8 +25,15 @@ def test_sample():
 # - Output: `False`
 
 
-def function_1():
-    pass
+def function_1(a, b, c):
+    if a < b and c < b and c > a:
+        return True
+    elif b < a and b < c and a > c:
+        return True
+    elif type(a) or type(b) or type(c) == str
+        raise TypeError(f"Expected type {int}, got {type(element)}")
+    else:
+        return False
 
 
 def test_function_1():
@@ -43,11 +50,18 @@ def test_function_1():
 # - Output: `['hello', 1, 2, 'hi']`
 
 
-def function_2():
-    pass
+def function_2(my_list):
+    if type(my_list) is not list:
+        raise TypeError(f"Expected type {list}, got {type(element)}")
+    elif:
+         for index, element in enumerate(my_list):
+            for charactor in my_list[index + 1::]:
+                if charactor = element:
+                    my_list.remove(charactor)
+    return my_list
 
 
-@pytest.mark.xfail
+
 def test_function_2():
     assert function_2(["h", 1, 2, 1, 1, "h", "hi"]) == ["h", 1, 2, "hi"]
     assert function_2([1, 2, 3]) == [1, 2, 3]
@@ -69,11 +83,20 @@ def test_function_2():
 # - Output: `False`
 
 
-def function_3():
-    pass
+def function_3(num):
+    if type(num) is not int:
+        raise TypeError(f"Expected type {int}, got {type(element)}")
+    sum = 0
+    for any_integer in range(1, num):
+        if num % any_integer = 0
+        sum += num
+    if sum == num:
+        return True
+    else:
+        return False
 
 
-@pytest.mark.xfail
+
 def test_function_3():
     assert function_3(6) is True
     assert function_3(28) is True
@@ -90,11 +113,19 @@ def test_function_3():
 # - Output: `True`
 
 
-def function_4():
-    pass
+def function_4(my_panagram):
+    my_alphabet = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
+    my_panagram_2 = my_panagram.lower()
+    p = 0
+    for element in my_alphabet:
+        if my_panagram_2.find(element) + 1:
+            p += 1
+        if p = 26 :
+            return True
+        else:
+            return False
 
 
-@pytest.mark.xfail
 def test_function_4():
     assert function_4("the quick brown fox jumped over the lazy dog") is True
     assert function_4("random") is False
@@ -109,11 +140,15 @@ def test_function_4():
 # - Output: 2.5
 
 
-def function_5():
-    pass
+def function_5(*args):
+    sum = 0
+    for element in args:
+        if type(element) == {int}:
+            sum += element
+        else:
+            raise TypeError(f"args expected {type(int)} found {type(element)}")
+        return sum/len(args)
 
-
-@pytest.mark.xfail
 def test_function_5():
     assert function_5(1, 2, 3, 4) == 2.5
     assert function_5(3) == 3
