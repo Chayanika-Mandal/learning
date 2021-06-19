@@ -47,6 +47,7 @@ def test_function_1():
 # - Input: `function_2(['hello', 1, 2, 1, 1, 'hello', 'hi'])`
 # - Output: `['hello', 1, 2, 'hi']`
 
+
 def function_2(my_list):
     if type(my_list) is not list:
         raise TypeError(f"Expected type {list}, got {type(my_list)}")
@@ -56,6 +57,7 @@ def function_2(my_list):
             if character not in new_list:
                 new_list.append(character)
         return new_list
+
 
 def test_function_2():
     assert function_2(["h", 1, 2, 1, 1, "h", "hi"]) == ["h", 1, 2, "hi"]
@@ -84,12 +86,11 @@ def function_3(num):
     sum = 0
     for any_integer in range(1, num):
         if num % any_integer == 0:
-            sum += any_integer 
+            sum += any_integer
     if sum == num:
         return True
     else:
         return False
-
 
 
 def test_function_3():
@@ -109,8 +110,34 @@ def test_function_3():
 
 
 def function_4(my_panagram):
-    my_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
-    "n", "o", "p", "q", "r", 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    my_alphabet = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+    ]
     my_panagram_2 = my_panagram.lower()
     for alphabet in my_alphabet:
         if alphabet not in my_panagram_2:
@@ -139,7 +166,8 @@ def function_5(*args):
             sum += element
         else:
             raise TypeError(f"args expected {int} found {type(element)}")
-    return sum/len(args)
+    return sum / len(args)
+
 
 def test_function_5():
     assert function_5(1, 2, 3, 4) == 2.5
