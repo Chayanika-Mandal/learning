@@ -51,10 +51,6 @@ def function_2(dict_1, dict_2):
     return dict_3
 
 
-function_2({"a": 200}, {"a": 100, "b": 200})
-
-#%%
-@pytest.mark.xfail
 def test_function_2():
     assert function_2({"a": 200}, {"a": 100, "b": 200}) == {"a": 300, "b": 200}
     assert function_2(
@@ -78,10 +74,6 @@ def function_3(dict1):
     return num, mynum
 
 
-function_3({31: 111, 22: 222, 43: 455, 25: 555})
-
-#%%
-@pytest.mark.xfail
 def test_function_3():
     assert function_3({31: 111, 22: 222, 43: 455, 25: 555}) == (555, 455)
     assert function_3({1131: 111, 222: 222, 453: 555, 25: 555}) == (555, 555)
