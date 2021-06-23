@@ -38,6 +38,22 @@ def test_function_1():
 # in a way so that values of common keys are added in the third dictionary.
 
 
+def function_2(dict_1, dict_2):
+    dict_3 = {}
+    for x in dict_1:
+        if x in dict_2:
+            dict_3[x] = dict_1[x] + dict_2[x]
+        else:
+            dict_3[x] = dict_1[x]
+    for n in dict_2:
+        if n not in dict_3:
+            dict_3[n] = dict_2[n]
+    return dict_3
+
+
+function_2({"a": 200}, {"a": 100, "b": 200})
+
+#%%
 @pytest.mark.xfail
 def test_function_2():
     assert function_2({"a": 200}, {"a": 100, "b": 200}) == {"a": 300, "b": 200}
@@ -50,9 +66,21 @@ def test_function_2():
 # Question 3:
 # WAF to find the highest 2 values in a dictionary
 def function_3(dict1):
-    pass
+    num = 0
+    for key in dict1:
+        if dict1[key] > num:
+            num = dict1[key]
+    dict1.pop(key)
+    mynum = 0
+    for number in dict1:
+        if dict1[number] > mynum:
+            mynum = dict1[number]
+    return num, mynum
 
 
+function_3({31: 111, 22: 222, 43: 455, 25: 555})
+
+#%%
 @pytest.mark.xfail
 def test_function_3():
     assert function_3({31: 111, 22: 222, 43: 455, 25: 555}) == (555, 455)
