@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Jane",
+        "age": 25,
+        "city": "Melbourne",
+        "username": "jane-username",
+        "password": "password123"
+    },
+    {
+        "name": "Rob",
+        "age": 23,
+        "city": "New York",
+        "username": "username-rob",
+        "password": "123password"
+    },
+    {
+        "name": "Bob",
+        "age": 23,
+        "city": "London",
+        "username": "username-bob",
+        "password": "123password123"
+    },
+    {
+        "name": "John",
+        "age": 27,
+        "city": "Sydney",
+        "username": "username-john",
+        "password": "123"
+    }
+]
