@@ -1,0 +1,13 @@
+Gamma encoding of images is used to optimize the usage of bits when encoding an image, or
+bandwidth used to transport an image, by taking advantage of the non-linear manner in which
+humans perceive light and color.[1] The human perception of brightness (lightness),under
+common illumination conditions (neither pitch black nor blindingly bright), follows an
+approximate power function (note: no relation to the gamma function), with greater
+sensitivity to relative differences between darker tones than between lighter tones,
+consistent with the Stevens power law for brightness perception. If images are not
+gamma-encoded, they allocate too many bits or too much bandwidth to highlights that humans
+cannot differentiate, and too few bits or too little bandwidth to shadow values that humans
+are sensitive to and would require more bits/bandwidth to maintain the same visual
+quality.[2][1][3] Gamma encoding of floating-point images is not required (and may be
+counterproductive), because the floating-point format already provides a piecewise linear
+approximation of a logarithmic curve.[4]
