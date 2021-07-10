@@ -28,7 +28,7 @@ import random
 with open("seventh.txt", "r") as file:
     contents = file.read()
     contents_list = contents.split(" ")
-    random_word = list(random.choice(contents_list))
+    random_word = random.choice(contents_list)
     print(random_word)
 
 # %% [markdown]
