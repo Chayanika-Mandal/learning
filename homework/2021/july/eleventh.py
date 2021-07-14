@@ -11,7 +11,32 @@ for element in string:
 
 
 def function(string: str) -> str:
-    pass
+    my_list = []
+    for index, character in enumerate(string):
+        my_list.append(character)
+    for index, character in enumerate(my_list):
+        if index == len(my_list) - 1:
+            if character != "Z":
+                ascii_val = ord(character) + 1
+                my_list[index] = chr(ascii_val)
+            else:
+                ascii_val = ord(character) - 25
+                my_list[index] = chr(ascii_val)
+                ascii_val = ord(character) + 1
+                my_list[index - 1] = chr(ascii_val)
+        for index, character in enumerate(my_list):
+            if ord(character) > 90:
+                if index != 0:
+                    ascii_val = ord(character) - 26
+                    my_list[index] = chr(ascii_val)
+                    ascii_val = ord(character) + 1
+                    my_list[index - 1] = chr(ascii_val)
+                else:
+                    my_list.insert(0, "A")
+    return my_list
+
+
+print(function("ZZZZ"))
 
 
 def test_function():
@@ -38,3 +63,16 @@ def test_function():
 # s1 = "Ault"
 # s2 = "Kelly"
 # output = "AuKellylt"
+s1 = "Ault"
+s2 = "Kelly"
+s1_list = []
+for character in s1:
+    s1_list.append(character)
+s1_list.insert(len(s1) // 2, s2)
+print(s1_list)
+s1_new = ""
+for element in s1_list:
+    s1_new += element
+print(s1_new)
+
+# %%
