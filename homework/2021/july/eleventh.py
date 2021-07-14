@@ -1,42 +1,45 @@
 # %%
-string = "hello"
-
-for element in string:
-    print(ord(element))
-
-# %%
 # # Question 1:
 # Find the next string of a given string. Assume that all the input characters
 # will be in uppercase.
+import string
+
+UPPERCASE = list(string.ascii_uppercase)
 
 
-def function(string: str) -> str:
-    my_list = []
-    for index, character in enumerate(string):
-        my_list.append(character)
-    for index, character in enumerate(my_list):
-        if index == len(my_list) - 1:
-            if character != "Z":
-                ascii_val = ord(character) + 1
-                my_list[index] = chr(ascii_val)
+def get_next(letter):
+    new_index = UPPERCASE.index(letter) + 1
+    try:
+        return UPPERCASE[new_index]
+    except IndexError:
+        return "A"
+
+
+def function(letters):
+    listed = list(reversed(list(letters)))
+    new = []
+    if letters[-1] != "Z":
+        new = list(letters)
+        new[-1] = get_next(new[-1])
+    else:
+        carry = 0
+        for letter in listed:
+            next_letter = get_next(letter)
+            if next_letter == "A":
+                carry = 1
+                new.insert(0, next_letter)
+                continue
+            if carry == 1:
+                carry = 0
+                new.insert(0, next_letter)
             else:
-                ascii_val = ord(character) - 25
-                my_list[index] = chr(ascii_val)
-                ascii_val = ord(character) + 1
-                my_list[index - 1] = chr(ascii_val)
-        for index, character in enumerate(my_list):
-            if ord(character) > 90:
-                if index != 0:
-                    ascii_val = ord(character) - 26
-                    my_list[index] = chr(ascii_val)
-                    ascii_val = ord(character) + 1
-                    my_list[index - 1] = chr(ascii_val)
-                else:
-                    my_list.insert(0, "A")
-    return my_list
+                new.insert(0, letter)
+        if letters[0].upper() == "Z":
+            new.insert(0, "A")
+    return "".join(new)
 
 
-print(function("ZZZZ"))
+function("ZZ")
 
 
 def test_function():
